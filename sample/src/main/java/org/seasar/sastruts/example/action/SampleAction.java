@@ -14,7 +14,13 @@ public class SampleAction {
 	HttpServletRequest request = SingletonS2Container.getComponent(HttpServletRequest.class);
 	HttpServletRequest request2 = RequestUtil.getRequest();
 	
+	
 	public String index() {
+		UserDto userDto = (UserDto)session.getAttribute("userDto");
+		return "sample.jsp";
+	}
+	
+	public String index2() {
 		UserDto userDto = (UserDto)session.getAttribute("userDto");
 		return "sample.jsp";
 	}
